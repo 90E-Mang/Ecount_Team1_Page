@@ -5,6 +5,7 @@
     <title></title>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7497f3474b7c5e3f0bf3bdbcc816ebed"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         window.onload = function () {
             var mapContainer = document.getElementById('map');
@@ -23,9 +24,9 @@
 
             // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
             var zoomControl = new kakao.maps.ZoomControl();
-            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);          
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-            // 마커를 표시할 위치와 title 객체 배열입니다 
+            // 마커를 표시할 위치와 title 객체 배열입니다
             var positions = [
                 {
                     title: '임현기',
@@ -41,7 +42,7 @@
                 },
                 {
                     title: '김보라',
-                    latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+                    latlng: new kakao.maps.LatLng(37.653252, 127.244383)
                 }
             ];
             // 마커 이미지의 이미지 주소입니다
@@ -52,7 +53,7 @@
                 // 마커 이미지의 이미지 크기 입니다
                 var imageSize = new kakao.maps.Size(24, 35);
 
-                // 마커 이미지를 생성합니다    
+                // 마커 이미지를 생성합니다
                 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
                 // 마커를 생성합니다
@@ -60,7 +61,7 @@
                     map: map, // 마커를 표시할 지도
                     position: positions[i].latlng, // 마커를 표시할 위치
                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                    image: markerImage, // 마커 이미지 
+                    image: markerImage, // 마커 이미지
                     clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
                 });
                 var iwContent = '<div style="padding:5px;">' + positions[i].title + '</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
@@ -72,6 +73,14 @@
                     removable: iwRemoveable
                 });
                 kakao.maps.event.addListener(marker, 'click', makeClickListener(map, marker, infowindow));
+
+                //let btnmove = document.createElement('button');
+                //btnmove.setAttribute("id", "btn" + i)
+                //$('#btn').click(function () {
+                //    var moveLatlon = positions[i].latlng;
+                //    map.panTo(moveLatlon);
+                //});
+                //document.getElementById("buttons").appendChild(btnmove);
             }
             //mapContainer.appendChild(map);
             function makeClickListener(map, marker, infowindow) {
@@ -79,12 +88,36 @@
                     infowindow.open(map, marker);
                 };
             }
-            
+            // 버튼 누르면 팀원별 가까운 지하철 역으로 지도 중심 좌표 이동
+            $('#btn1').click(function () {
+                var moveLatlon = positions[0].latlng;
+                map.panTo(moveLatlon);
+            });
+            $('#btn2').click(function () {
+                var moveLatlon = positions[1].latlng;
+                map.panTo(moveLatlon);
+            });
+            $('#btn3').click(function () {
+                var moveLatlon = positions[2].latlng;
+                map.panTo(moveLatlon);
+            });
+            $('#btn4').click(function () {
+                var moveLatlon = positions[3].latlng;
+                map.panTo(moveLatlon);
+            });
         }
 
     </script>
 </head>
 <body>
     <div id="map" style="width:700px;height:700px;"></div>
+    <div id="buttons">
+        <h3>Press button to move their location</h3>
+        <button id="btn1">임현기</button>
+        <button id="btn2">이대익</button>
+        <button id="btn3">안현욱</button>
+        <button id="btn4">김보라</button>
+    </div>
+    
 </body>
 </html>
