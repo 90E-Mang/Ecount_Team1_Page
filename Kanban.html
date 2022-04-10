@@ -10,11 +10,15 @@
 	<title>이카운트 1조</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"
-		id="bootstrap-css" />
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	-->
 	<title></title>
 	<style>
 		img {
@@ -55,263 +59,263 @@
 			margin-bottom: 30px;
 		}
 
-		.kanban-centered:before,
-		.kanban-centered:after {
-			content: " ";
-			display: table;
-		}
+			.kanban-centered:before,
+			.kanban-centered:after {
+				content: " ";
+				display: table;
+			}
 
-		.kanban-centered:after {
-			clear: both;
-		}
+			.kanban-centered:after {
+				clear: both;
+			}
 
-		.kanban-centered:before,
-		.kanban-centered:after {
-			content: " ";
-			display: table;
-		}
+			.kanban-centered:before,
+			.kanban-centered:after {
+				content: " ";
+				display: table;
+			}
 
-		.kanban-centered:after {
-			clear: both;
-		}
+			.kanban-centered:after {
+				clear: both;
+			}
 
-		.kanban-centered:before {
-			content: '';
-			position: absolute;
-			display: block;
-			width: 2px;
-			/*background: #f5f5f6;*/
-			top: 20px;
-			bottom: 20px;
-			/*margin-left: 18px;*/
-		}
+			.kanban-centered:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 2px;
+				/*background: #f5f5f6;*/
+				top: 20px;
+				bottom: 20px;
+				/*margin-left: 18px;*/
+			}
 
-		.kanban-centered .kanban-entry {
-			position: relative;
-			/*width: 50%;
-        float: right;*/
-			margin: 10px 8px;
-			clear: both;
-			border-radius: 4px;
-			-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
-			-moz-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
-			box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
-		}
+			.kanban-centered .kanban-entry {
+				position: relative;
+				/*width: 50%;
+				float: right;*/
+				margin: 10px 8px;
+				clear: both;
+				border-radius: 4px;
+				-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
+				-moz-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
+				box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
+			}
 
-		.kanban-centered .kanban-entry:before,
-		.kanban-centered .kanban-entry:after {
-			content: " ";
-			display: table;
-		}
+				.kanban-centered .kanban-entry:before,
+				.kanban-centered .kanban-entry:after {
+					content: " ";
+					display: table;
+				}
 
-		.kanban-centered .kanban-entry:after {
-			clear: both;
-		}
+				.kanban-centered .kanban-entry:after {
+					clear: both;
+				}
 
-		.kanban-centered .kanban-entry:before,
-		.kanban-centered .kanban-entry:after {
-			content: " ";
-			display: table;
-		}
+				.kanban-centered .kanban-entry:before,
+				.kanban-centered .kanban-entry:after {
+					content: " ";
+					display: table;
+				}
 
-		.kanban-centered .kanban-entry:after {
-			clear: both;
-		}
+				.kanban-centered .kanban-entry:after {
+					clear: both;
+				}
 
-		.kanban-centered .kanban-entry.begin {
-			margin-bottom: 0;
-		}
+				.kanban-centered .kanban-entry.begin {
+					margin-bottom: 0;
+				}
 
-		.kanban-centered .kanban-entry.left-aligned {
-			float: left;
-		}
+				.kanban-centered .kanban-entry.left-aligned {
+					float: left;
+				}
 
-		.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner {
-			margin-left: 0;
-			margin-right: -18px;
-		}
+					.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner {
+						margin-left: 0;
+						margin-right: -18px;
+					}
 
-		.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-time {
-			left: auto;
-			right: -100px;
-			text-align: left;
-		}
+						.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-time {
+							left: auto;
+							right: -100px;
+							text-align: left;
+						}
 
-		.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-icon {
-			float: right;
-		}
+						.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-icon {
+							float: right;
+						}
 
-		.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-label {
-			margin-left: 0;
-			margin-right: 70px;
-		}
+						.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-label {
+							margin-left: 0;
+							margin-right: 70px;
+						}
 
-		.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-label:after {
-			left: auto;
-			right: 0;
-			margin-left: 0;
-			margin-right: -9px;
-			-moz-transform: rotate(180deg);
-			-o-transform: rotate(180deg);
-			-webkit-transform: rotate(180deg);
-			-ms-transform: rotate(180deg);
-			transform: rotate(180deg);
-		}
+							.kanban-centered .kanban-entry.left-aligned .kanban-entry-inner .kanban-label:after {
+								left: auto;
+								right: 0;
+								margin-left: 0;
+								margin-right: -9px;
+								-moz-transform: rotate(180deg);
+								-o-transform: rotate(180deg);
+								-webkit-transform: rotate(180deg);
+								-ms-transform: rotate(180deg);
+								transform: rotate(180deg);
+							}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner {
-			position: relative;
-			/*margin-left: -24px;*/
-		}
+				.kanban-centered .kanban-entry .kanban-entry-inner {
+					position: relative;
+					/*margin-left: -24px;*/
+				}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner:before,
-		.kanban-centered .kanban-entry .kanban-entry-inner:after {
-			content: " ";
-			display: table;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner:before,
+					.kanban-centered .kanban-entry .kanban-entry-inner:after {
+						content: " ";
+						display: table;
+					}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner:after {
-			clear: both;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner:after {
+						clear: both;
+					}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner:before,
-		.kanban-centered .kanban-entry .kanban-entry-inner:after {
-			content: " ";
-			display: table;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner:before,
+					.kanban-centered .kanban-entry .kanban-entry-inner:after {
+						content: " ";
+						display: table;
+					}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner:after {
-			clear: both;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner:after {
+						clear: both;
+					}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time {
-			position: absolute;
-			left: -100px;
-			text-align: right;
-			padding: 10px;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time {
+						position: absolute;
+						left: -100px;
+						text-align: right;
+						padding: 10px;
+						-webkit-box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						box-sizing: border-box;
+					}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time>span {
-			display: block;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time > span {
+							display: block;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time>span:first-child {
-			font-size: 15px;
-			font-weight: bold;
-		}
+							.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time > span:first-child {
+								font-size: 15px;
+								font-weight: bold;
+							}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time>span:last-child {
-			font-size: 12px;
-		}
+							.kanban-centered .kanban-entry .kanban-entry-inner .kanban-time > span:last-child {
+								font-size: 12px;
+							}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon {
-			background: #fff;
-			color: #737881;
-			display: block;
-			width: 25px;
-			height: 25px;
-			-webkit-background-clip: padding-box;
-			-moz-background-clip: padding;
-			background-clip: padding-box;
-			-webkit-border-radius: 20px;
-			-moz-border-radius: 20px;
-			border-radius: 20px;
-			text-align: center;
-			-moz-box-shadow: 0 0 0 4px #f5f5f6;
-			-webkit-box-shadow: 0 0 0 4px #f5f5f6;
-			box-shadow: 0 0 0 4px #f5f5f6;
-			float: left;
-			margin-top: 6px;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon {
+						background: #fff;
+						color: #737881;
+						display: block;
+						width: 25px;
+						height: 25px;
+						-webkit-background-clip: padding-box;
+						-moz-background-clip: padding;
+						background-clip: padding-box;
+						-webkit-border-radius: 20px;
+						-moz-border-radius: 20px;
+						border-radius: 20px;
+						text-align: center;
+						-moz-box-shadow: 0 0 0 4px #f5f5f6;
+						-webkit-box-shadow: 0 0 0 4px #f5f5f6;
+						box-shadow: 0 0 0 4px #f5f5f6;
+						float: left;
+						margin-top: 6px;
+					}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-primary {
-			background-color: #303641;
-			color: #fff;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-primary {
+							background-color: #303641;
+							color: #fff;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-secondary {
-			background-color: #ee4749;
-			color: #fff;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-secondary {
+							background-color: #ee4749;
+							color: #fff;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-success {
-			background-color: #00a651;
-			color: #fff;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-success {
+							background-color: #00a651;
+							color: #fff;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-info {
-			background-color: #21a9e1;
-			color: #fff;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-info {
+							background-color: #21a9e1;
+							color: #fff;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-warning {
-			background-color: #fad839;
-			color: #fff;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-warning {
+							background-color: #fad839;
+							color: #fff;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-danger {
-			background-color: #cc2424;
-			color: #fff;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-icon.bg-danger {
+							background-color: #cc2424;
+							color: #fff;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label {
-			position: relative;
-			background: #f5f5f6;
-			padding: 0.75em;
-			/*margin-left: 50px;*/
-			-webkit-background-clip: padding-box;
-			-moz-background-clip: padding;
-			background-clip: padding-box;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
-		}
+					.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label {
+						position: relative;
+						background: #f5f5f6;
+						padding: 0.75em;
+						/*margin-left: 50px;*/
+						-webkit-background-clip: padding-box;
+						-moz-background-clip: padding;
+						background-clip: padding-box;
+						-webkit-border-radius: 3px;
+						-moz-border-radius: 3px;
+						border-radius: 3px;
+					}
 
-		/*.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 9px 9px 9px 0;
-                    border-color: transparent #f5f5f6 transparent transparent;
-                    left: 0;
-                    top: 10px;
-                    margin-left: -9px;
-                }*/
+						/*.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label:after {
+							content: '';
+							display: block;
+							position: absolute;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 9px 9px 9px 0;
+							border-color: transparent #f5f5f6 transparent transparent;
+							left: 0;
+							top: 10px;
+							margin-left: -9px;
+						}*/
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2,
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p {
-			color: #737881;
-			font-family: "Noto Sans", sans-serif;
-			font-size: 12px;
-			margin: 0;
-			line-height: 1.428571429;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2,
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p {
+							color: #737881;
+							font-family: "Noto Sans", sans-serif;
+							font-size: 12px;
+							margin: 0;
+							line-height: 1.428571429;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p+p {
-			margin-top: 15px;
-		}
+							.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p + p {
+								margin-top: 15px;
+							}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 {
-			font-size: 16px;
-			margin-bottom: 10px;
-		}
+						.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 {
+							font-size: 16px;
+							margin-bottom: 10px;
+						}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 a {
-			color: #303641;
-		}
+							.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 a {
+								color: #303641;
+							}
 
-		.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 span {
-			-webkit-opacity: .6;
-			-moz-opacity: .6;
-			opacity: .6;
-			-ms-filter: alpha(opacity=60);
-			filter: alpha(opacity=60);
-		}
+							.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2 span {
+								-webkit-opacity: .6;
+								-moz-opacity: .6;
+								opacity: .6;
+								-ms-filter: alpha(opacity=60);
+								filter: alpha(opacity=60);
+							}
 
 
 		.modal-static {
@@ -323,18 +327,18 @@
 			overflow: visible !important;
 		}
 
-		.modal-static,
-		.modal-static .modal-dialog,
-		.modal-static .modal-content {
-			width: 200px;
-			height: 150px;
-		}
+			.modal-static,
+			.modal-static .modal-dialog,
+			.modal-static .modal-content {
+				width: 200px;
+				height: 150px;
+			}
 
-		.modal-static .modal-dialog,
-		.modal-static .modal-content {
-			padding: 0 !important;
-			margin: 0 !important;
-		}
+				.modal-static .modal-dialog,
+				.modal-static .modal-content {
+					padding: 0 !important;
+					margin: 0 !important;
+				}
 
 		.kanban-col {
 			width: 300px;
@@ -350,10 +354,10 @@
 
 
 		/*.panel-heading {
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-    cursor: grab;
-}*/
+			cursor: -moz-grab;
+			cursor: -webkit-grab;
+			cursor: grab;
+		}*/
 
 		.grab {
 			cursor: -moz-grab;
@@ -369,9 +373,9 @@
 			cursor: context-menu;
 		}
 
-		.panel-heading i {
-			cursor: pointer;
-		}
+			.panel-heading i {
+				cursor: pointer;
+			}
 
 
 
@@ -461,50 +465,53 @@
 
 		/////////
 
-		let itemno = 6;
-		let cavno = 0;
-		var idtxt;
-		let drawswitch = true;
-		let onlyonecanvas = false;
+
 
 		window.onload = function () {
 
 			var canvas;
 			var ctx;
+			let itemno = 6;
+			let cavno = 0;
+			var idtxt;
+			let drawswitch = true;
+			let onlyonecanvas = false;
+			let kanbanColCount = 0;
 
+			$('#addKanban').on("click", function () {
+				kanbanColCount++;
+				let addArticle = document.createElement('article');
+				let ArticleId = "Item" + kanbanColCount;
+				console.log(ArticleId);
+				addArticle.setAttribute('class', 'kanban-entry grab');
+				addArticle.setAttribute('draggable', 'true');
+				addArticle.setAttribute('id', ArticleId);
 
-			$('#addcard').click(function () {
-				let article = document.createElement('article');
-				//article.setAttribute({ "class": "kanban - entry grab", "draggable": true, "id": "" });
-				article.setAttribute("class", "kanban-entry grab");
-				itemno++; let idtxt = "item" + itemno.toString();
-				article.setAttribute("id", idtxt);
-				article.setAttribute("draggable", true);
+				let addinner = document.createElement('div');
+				addinner.setAttribute('class', 'kanban-entry-inner');
 
-				let div1 = document.createElement('div');
-				div1.setAttribute("class", "kanban-entry-inner");
+				let addlabel = document.createElement('div');
+				addlabel.setAttribute('class', 'kanban-label');
 
-				let div2 = document.createElement('div');
-				div2.setAttribute("class", "kanban-label");
+				let add_h2 = document.createElement('h2');
+				let add_href = document.createElement('textarea');
+				add_href.setAttribute('href', '#');
+				add_href.setAttribute('maxlength', '18');
+				add_href.setAttribute('style', 'width:200px');
+				//add_href.innerHTML = $('#kanban_title').val();
+				let add_p = document.createElement('textarea');
+				add_p.setAttribute('style', 'height:180px;width:200px');
+				//add_p.innerHTML = $('#kanban_content').val();
 
-				let h2 = document.createElement('h2');
-				let alink = document.createElement('a');
-				alink.setAttribute("href", "#");
-				alink.innerHTML = "the ----- title";
+				add_h2.appendChild(add_href);
+				add_h2.appendChild(add_p);
+				addlabel.appendChild(add_h2);
+				addinner.appendChild(addlabel);
+				addArticle.appendChild(addinner);
+				//addArticle.appendChild(addinner).appendChild(addlabel).appendChild(add_h2).appendChild(add_href).append(add_p);
+				console.log(addArticle);
 
-				let p = document.createElement('p');
-				p.innerHTML = "the ----- text";
-
-
-				h2.appendChild(alink);
-				div2.appendChild(h2); div2.append(p);
-				div1.appendChild(div2);
-				article.appendChild(div1);
-
-
-				document.getElementById('TODO').appendChild(article);
-
-
+				$('#TODO').append(addArticle);
 			});
 
 			$('#addcanvas').click(function () {
@@ -590,35 +597,34 @@
 
 				}
 
-			});
+				$('#can_draw').on('click', function () {
+					console.log(idtxt);
+					if (drawswitch) {
 
-			$('#can_draw').on('click', function () {
-				console.log(idtxt);
-				if (drawswitch) {
+						drawswitch = false;
+						console.log("can't draw . switch : " + drawswitch);
+						document.getElementById(idtxt).setAttribute("draggable", true);
+						document.getElementById('can_draw').innerHTML = "캔버스 이동 모드";
 
-					drawswitch = false;
-					console.log("can't draw . switch : " + drawswitch);
-					document.getElementById(idtxt).setAttribute("draggable", true);
+					}
+					else {
 
-				}
-				else {
+						drawswitch = true;
+						console.log("can draw. switch :" + drawswitch);
+						document.getElementById(idtxt).setAttribute("draggable", false);
+						document.getElementById('can_draw').innerHTML = "캔버스 그리기 모드";
+					}
 
-					drawswitch = true;
-					console.log("can draw. switch :" + drawswitch);
-					document.getElementById(idtxt).setAttribute("draggable", false);
-				}
+				});
 
 			});
 
 		}
 
-
-
 	</script>
 </head>
 
 <body class="no-sidebar is-preload">
-	<script type="text/javascript" src="canvas.js"></script>
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -627,7 +633,6 @@
 
 				<!-- Logo -->
 				<h1 id="logo"><a href="home.html">HOME</a></h1>
-
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
@@ -654,14 +659,14 @@
 		<!-- Main -->
 		<div class="wrapper">
 			<div class="container" id="main">
-
+				
 				<!-- Content -->
 				<article id="content">
 					<header>
 						<h2>Kanban Board</h2>
 						<p>드래그와 드롭을 통해 일정을 관리할 수 있습니다.</p>
 					</header>
-					<button id="can_draw">그리기버튼</button>
+
 
 					<div class="container-fluid">
 						<div id="sortableKanbanBoards" class="row">
@@ -678,12 +683,15 @@
 										<article class="kanban-entry grab" id="item1" draggable="true">
 											<div class="kanban-entry-inner">
 												<div class="kanban-label">
-													<h2><a href="#">Art Ramadani</a> <span>posted a status update</span>
+													<h2>
+														<a href="#">Art Ramadani</a> <span>posted a status update</span>
 													</h2>
-													<p>Tolerably earnestly middleton extremely distrusts she boy now
+													<p>
+														Tolerably earnestly middleton extremely distrusts she boy now
 														not. Add and offered prepare how cordial two promise. Greatly
 														who affixed suppose but enquire compact prepare all put. Added
-														forth chief trees but rooms think may.</p>
+														forth chief trees but rooms think may.
+													</p>
 												</div>
 											</div>
 										</article>
@@ -692,7 +700,8 @@
 											<div class="kanban-entry-inner">
 												<div class="kanban-label">
 													<h2><a href="#">Job Meeting</a></h2>
-													<p>You have a meeting at <strong>Laborator Office</strong> Today.
+													<p>
+														You have a meeting at <strong>Laborator Office</strong> Today.
 													</p>
 												</div>
 											</div>
@@ -701,11 +710,14 @@
 										<article class="kanban-entry grab" id="item4" draggable="true">
 											<div class="kanban-entry-inner">
 												<div class="kanban-label">
-													<h2><a href="#">Arber Nushi</a> <span>changed his</span> <a
-															href="#">Profile Picture</a></h2>
+													<h2>
+														<a href="#">Arber Nushi</a> <span>changed his</span> <a href="#">Profile Picture</a>
+													</h2>
 
-													<blockquote>Pianoforte principles our unaffected not for astonished
-														travelling are particular.</blockquote>
+													<blockquote>
+														Pianoforte principles our unaffected not for astonished
+														travelling are particular.
+													</blockquote>
 												</div>
 											</div>
 										</article>
@@ -713,7 +725,7 @@
 									</div>
 								</div>
 								<div class="panel-footer">
-									<a href="#" id="addcard">Add a card...</a>
+									<a href="#" id="addKanban">Add a card...</a>
 								</div>
 								<div class="panel-footer">
 									<a href="#" id="addcanvas">Add a canvas...</a>
@@ -733,12 +745,15 @@
 											<div class="kanban-entry-inner">
 
 												<div class="kanban-label">
-													<h2><a href="#">Art Ramadani</a> <span>posted a status update</span>
+													<h2>
+														<a href="#">Art Ramadani</a> <span>posted a status update</span>
 													</h2>
-													<p>Tolerably earnestly middleton extremely distrusts she boy now
+													<p>
+														Tolerably earnestly middleton extremely distrusts she boy now
 														not. Add and offered prepare how cordial two promise. Greatly
 														who affixed suppose but enquire compact prepare all put. Added
-														forth chief trees but rooms think may.</p>
+														forth chief trees but rooms think may.
+													</p>
 												</div>
 											</div>
 										</article>
@@ -747,7 +762,8 @@
 											<div class="kanban-entry-inner">
 												<div class="kanban-label">
 													<h2><a href="#">Job Meeting</a></h2>
-													<p>You have a meeting at <strong>Laborator Office</strong> Today.
+													<p>
+														You have a meeting at <strong>Laborator Office</strong> Today.
 													</p>
 												</div>
 											</div>
@@ -770,12 +786,15 @@
 											<div class="kanban-entry-inner">
 
 												<div class="kanban-label">
-													<h2><a href="#">Art Ramadani</a> <span>posted a status update</span>
+													<h2>
+														<a href="#">Art Ramadani</a> <span>posted a status update</span>
 													</h2>
-													<p>Tolerably earnestly middleton extremely distrusts she boy now
+													<p>
+														Tolerably earnestly middleton extremely distrusts she boy now
 														not. Add and offered prepare how cordial two promise. Greatly
 														who affixed suppose but enquire compact prepare all put. Added
-														forth chief trees but rooms think may.</p>
+														forth chief trees but rooms think may.
+													</p>
 												</div>
 											</div>
 										</article>
@@ -784,7 +803,8 @@
 											<div class="kanban-entry-inner">
 												<div class="kanban-label">
 													<h2><a href="#">Job Meeting</a></h2>
-													<p>You have a meeting at <strong>Laborator Office</strong> Today.
+													<p>
+														You have a meeting at <strong>Laborator Office</strong> Today.
 													</p>
 												</div>
 											</div>
@@ -798,7 +818,7 @@
 
 						</div>
 					</div>
-
+					<button id="can_draw">캔버스 그리기 모드</button>
 
 					<!-- Static Modal -->
 					<div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
@@ -823,8 +843,10 @@
 			<div id="footer" class="container">
 				<header class="major">
 					<h2>Euismod aliquam vehicula lorem</h2>
-					<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel sem sit<br />
-						dolor neque semper magna lorem ipsum feugiat veroeros lorem ipsum dolore.</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel sem sit<br />
+						dolor neque semper magna lorem ipsum feugiat veroeros lorem ipsum dolore.
+					</p>
 				</header>
 				<div class="row">
 					<section class="col-6 col-12-narrower">
@@ -851,20 +873,38 @@
 					<section class="col-6 col-12-narrower">
 						<div class="row gtr-0">
 							<ul class="divided icons col-6 col-12-mobile">
-								<li class="icon brands fa-twitter"><a href="#"><span
-											class="extra">twitter.com/</span>untitled</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#"><span
-											class="extra">facebook.com/</span>untitled</a></li>
-								<li class="icon brands fa-dribbble"><a href="#"><span
-											class="extra">dribbble.com/</span>untitled</a></li>
+								<li class="icon brands fa-twitter">
+									<a href="#">
+										<span class="extra">twitter.com/</span>untitled
+									</a>
+								</li>
+								<li class="icon brands fa-facebook-f">
+									<a href="#">
+										<span class="extra">facebook.com/</span>untitled
+									</a>
+								</li>
+								<li class="icon brands fa-dribbble">
+									<a href="#">
+										<span class="extra">dribbble.com/</span>untitled
+									</a>
+								</li>
 							</ul>
 							<ul class="divided icons col-6 col-12-mobile">
-								<li class="icon brands fa-instagram"><a href="#"><span
-											class="extra">instagram.com/</span>untitled</a></li>
-								<li class="icon brands fa-youtube"><a href="#"><span
-											class="extra">youtube.com/</span>untitled</a></li>
-								<li class="icon brands fa-pinterest"><a href="#"><span
-											class="extra">pinterest.com/</span>untitled</a></li>
+								<li class="icon brands fa-instagram">
+									<a href="#">
+										<span class="extra">instagram.com/</span>untitled
+									</a>
+								</li>
+								<li class="icon brands fa-youtube">
+									<a href="#">
+										<span class="extra">youtube.com/</span>untitled
+									</a>
+								</li>
+								<li class="icon brands fa-pinterest">
+									<a href="#">
+										<span class="extra">pinterest.com/</span>untitled
+									</a>
+								</li>
 							</ul>
 						</div>
 					</section>
@@ -881,13 +921,16 @@
 	</div>
 
 	<!-- Scripts -->
+
+
+	<!--
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	-->
 </body>
 
 </html>
