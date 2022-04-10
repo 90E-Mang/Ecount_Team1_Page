@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The Canvas</title>
+
+
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+
+            var canvas = document.getElementById('theCanvas');
+            var ctx;
+            if (canvas.getContext) {
+                ctx = canvas.getContext('2d');
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height)
+            }
+
+            let nowdrawing = false;
+            let brushwidth = 5;
+
+            //선굵기 변화
+            document.getElementById("sliderA").addEventListener("change", function () {
+                brushwidth = document.getElementById("sliderA").value;
+            });
+
+            //색깔 교체
+            let red = document.getElementById("redslider");
+            let blue = document.getElementById("blueslider");
+            let green = document.getElementById("greenslider");
+
+            red.addEventListener("change", colorChange);
+            blue.addEventListener("change", colorChange);
+            green.addEventListener("change", colorChange);
+
+            
+
+
+            //색 변환기에 쓸 16진법 변환기
+            function decimalToHexString(number)
+            {
+                /*
+                 if (number < 0) {
+                    number = 0xFFFFFFFF + number + 1;
+                }
+                 */
+                if (number <= 16)
+                    return "0"+number.toString(16).toUpperCase();
+                else
+                    return number.toString(16).toUpperCase();
+            }
+
+            //처음바탕색깔
+            let nowcolor;
+
+            //색변화 감지
+            function colorChange()
+            {
+                //색 조합
+                let newr = decimalToHexString(Number(red.value));
+                let newb = decimalToHexString(Number(blue.value));
+                let newg = decimalToHexString(Number(green.value));
+                nowcolor = '#' + newr + newg + newb;
+                console.log(nowcolor);
+
+                //브러쉬 현재색깔
+                let cbox = document.getElementById("colorbox");
+                let cboxtx = cbox.getContext('2d');
+                cboxtx.fillStyle = nowcolor;
+                cboxtx.fillRect(0, 0, canvas.width, canvas.height)
+            }
+
+            nowcolor = colorChange();
+
+
+            ////////////////////////선 그리기 시작///////////////
+            canvas.addEventListener("mousedown", stardraw);
+            canvas.addEventListener("mousemove", drawing);
+            canvas.addEventListener("mouseup", endraw);
+            canvas.addEventListener("mouseout", endraw);
+
+            function stardraw() {
+                const x = event.clientX - ctx.canvas.offsetLeft;
+                const y = event.clientY - ctx.canvas.offsetTop;
+
+                nowdrawing = true;
+                ctx.beginPath(); // 없으면 선 굵기 변화시 그전에 그린것도 같이 따라감
+                ctx.moveTo(x, y);
+                ctx.strokeStyle = nowcolor; // 선 색깔 적용
+                ctx.lineWidth = brushwidth; // 선 굵기 적용
+
+            }
+
+            function drawing() {
+                if (nowdrawing) {
+                    const x = event.clientX - ctx.canvas.offsetLeft;
+                    const y = event.clientY - ctx.canvas.offsetTop;
+
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                }
+
+            }
+
+            function endraw() {
+                nowdrawing = false;
+            }
+            /////////////////////선그리기 끝///////////////////////////////
+
+            //ctx.globalAlpha = 0.5
+
+
+            //캔버스 교체
+            //사진으로 //외부링크는 다운로드가 안되므로 임시봉인
+            
+            document.getElementById("imagesubmit").addEventListener('click', function () {
+                var img = new Image(); //이미지 객체 생성
+                img.src = document.getElementById("canvasbackgroundimage").value;                
+                //img.crossOrigin = 'Anonymous';
+                console.log(img.src);
+                ctx.drawImage(img, 0, 0, 800, 600);
+                
+            })
+            
+
+            //팔레트로
+            document.getElementById("noimage").addEventListener('click', function () {
+                ctx.fillStyle = nowcolor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height)
+            })
+            
+            //이미지 다운로드
+            document.querySelector('a').addEventListener('click', event => { alert("주의 : 외부링크로 가져온 이미지는 다운로드할 수 없습니다."); event.target.href = canvas.toDataURL(); });
+            //웹 이미지 다수는 img.crossOrigin = 'Anonymous';가 안먹혀서 다운로드가 안됨
+            
+        }
+        
+        
+    </script>
+
+
+</head>
+<body>
+
+    <h3>
+        R :<input id="redslider" type="range" min="0" max="255" value="255" />
+        G :<input id="greenslider" type="range" min="0" max="255" value="255" />
+        B :<input id="blueslider" type="range" min="0" max="255" value="255" />
+    </h3>
+    <h3>
+        선굵기  <input id="sliderA" type="range" min="1" max="100" value="5" />
+        <canvas id="colorbox" width="50" height="50"></canvas>
+
+        <!--
+
+        -->
+        <input type="text" id="canvasbackgroundimage" value="https://images.freeimages.com/images/large-previews/934/antelope-canyon-6-1532993.jpg" />
+        <button id="imagesubmit" type="submit">링크로 바탕사진적용</button>
+        <button id="noimage">
+            현재 팔레트로 바탕칠하기
+        </button>
+        <a href="" download="my_painting.png" id="download">다운로드</a>
+    </h3>
+
+    <canvas id="theCanvas" width="800" height="600"></canvas>
+
+</body>
+</html>
