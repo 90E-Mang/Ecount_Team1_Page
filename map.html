@@ -11,6 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script type="text/javascript" src="map.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7497f3474b7c5e3f0bf3bdbcc816ebed"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -18,7 +19,6 @@
 </head>
 
 <body class="no-sidebar is-preload">
-	<script type="text/javascript" src="map.js"></script>
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -56,9 +56,9 @@
 
 				<!-- Content -->
 				<article id="content">
-					<header>
+					<header style="margin-bottom: 10px;">
 						<h2>Map</h2>
-						<p>지역을 선택해 지도를 보고 핀을 설정할 수 있습니다.<br/>
+						<p style="margin-bottom: 10px;">지역을 선택해 지도를 보고 핀을 설정할 수 있습니다.<br/>
 							Press button to move their location</p>
 					</header>
 					<div id="buttons">
@@ -72,6 +72,7 @@
 			</div>
 		</div>
 
+		<!-- Footer -->
 		<!-- Footer -->
 		<div id="footer-wrapper">
 			<div id="footer" class="container">
