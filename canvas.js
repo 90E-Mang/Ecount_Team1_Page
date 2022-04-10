@@ -112,7 +112,7 @@ window.onload = function () {
         img.src = document.getElementById("canvasbackgroundimage").value;                
         //img.crossOrigin = 'Anonymous';
         console.log(img.src);
-        ctx.drawImage(img, 0, 0, 800, 600);
+        ctx.drawImage(img, 0, 0, canvas.getAttribute('width'), canvas.getAttribute('height'));
         webimageused = true;
     })
     
