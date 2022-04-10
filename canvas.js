@@ -124,14 +124,14 @@ window.onload = function () {
     })
     
     //이미지 다운로드
-    document.querySelector('a').addEventListener('click', event => {
+    document.getElementById('download').addEventListener('click', event => {
         if (webimageused) {
             alert("주의 : 외부링크로 가져온 이미지는 다운로드할 수 없습니다.");
         }
         else
         {
-            document.querySelector('a').setAttribute('download', "my_painting.png");
-            document.querySelector('a').setAttribute('href', canvas.toDataURL());
+            document.getElementById('download').setAttribute('download', "my_painting.png");
+            document.getElementById('download').setAttribute('href', canvas.toDataURL());
         }
             
     });
