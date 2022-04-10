@@ -210,8 +210,12 @@ input, select, textarea {
 		margin-bottom: 0;
 	}
 
-	.row > section, .row > article {
+	.row > article {
 		margin-bottom: 0;
+	}
+
+	.row > section{
+		margin-bottom: 3em;
 	}
 
 	header {
