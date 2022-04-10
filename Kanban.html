@@ -494,14 +494,16 @@
 				addlabel.setAttribute('class', 'kanban-label');
 
 				let add_h2 = document.createElement('h2');
-				let add_href = document.createElement('textarea');
+				let add_href = document.createElement('href');
+				add_href.setAttribute('id', 'card_title');
 				add_href.setAttribute('href', '#');
-				add_href.setAttribute('maxlength', '18');
-				add_href.setAttribute('style', 'width:200px');
-				//add_href.innerHTML = $('#kanban_title').val();
-				let add_p = document.createElement('textarea');
-				add_p.setAttribute('style', 'height:180px;width:200px');
-				//add_p.innerHTML = $('#kanban_content').val();
+				//add_href.setAttribute('maxlength', '18');
+				//add_href.setAttribute('style', 'width:200px');
+				add_href.innerHTML = $('#kanban_title').val();
+				let add_p = document.createElement('p');
+				add_p.setAttribute('id','card_contents');
+				//add_p.setAttribute('style', 'height:180px;width:200px');
+				add_p.innerHTML = $('#kanban_content').val();
 
 				add_h2.appendChild(add_href);
 				add_h2.appendChild(add_p);
@@ -513,7 +515,6 @@
 
 				$('#TODO').append(addArticle);
 			});
-
 			$('#addcanvas').click(function () {
 
 				if (onlyonecanvas)
@@ -664,7 +665,7 @@
 				<article id="content">
 					<header>
 						<h2>Kanban Board</h2>
-						<p>드래그와 드롭을 통해 일정을 관리할 수 있습니다.</p>
+						<p>드래그와 드롭을 통해 일정을 관리할 수 있습니다.</p>						
 					</header>
 
 
@@ -723,9 +724,6 @@
 										</article>
 
 									</div>
-								</div>
-								<div class="panel-footer">
-									<a href="#" id="addKanban">Add a card...</a>
 								</div>
 								<div class="panel-footer">
 									<a href="#" id="addcanvas">Add a canvas...</a>
@@ -818,8 +816,11 @@
 
 						</div>
 					</div>
-					<button id="can_draw">캔버스 그리기 모드</button>
-
+					<div>
+						<span>Card_Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" id="kanban_title" style="width:300px;" /><br />
+						<span>Card_Contents &nbsp;&nbsp;</span><textarea id="kanban_content" style="width:300px;height:200px;font-size:20px;"></textarea>&nbsp;&nbsp;&nbsp;
+						<button id="addKanban">Add a Card</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="can_draw">캔버스 그리기 모드</button>
+					</div>					
 					<!-- Static Modal -->
 					<div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
 						<div class="modal-dialog">
