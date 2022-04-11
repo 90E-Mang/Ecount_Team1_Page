@@ -17,7 +17,25 @@
     function scrollMove(seq){
         var offset = $("#section" + seq).offset();
         $('html, body').animate({scrollTop : offset.top}, 400);
-    }
+	}
+    window.onload = function () {
+        var object = document.getElementById("logoObject");
+        var svgDocument = object.contentDocument;
+        console.log(svgDocument.getElementsByTagName("path"));
+        let color = svgDocument.getElementsByTagName("path");
+
+		$('#logoObject').mouseover(function () {
+            for (let i = 1; i < color.length; i++) {
+                color[i].setAttribute("style", "fill:#b30413");
+            }
+        })
+		$('#logoObject').mouseleave(function () {
+            for (let i = 1; i < color.length; i++) {
+                color[i].setAttribute("style", "fill:#c32433");
+            }
+
+        });
+    };
 </script>
 
 <body class="left-sidebar is-preload"  id="section0">
